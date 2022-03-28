@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	 xsi:schemaLocation="http://www.springframework.org/schema/beans
+	 https://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- inheritance is configure from the container. No need to explicitly
+		 extends a class. Just be sure that each class has the same instance
+		 variables and specify the parent attribute from within the class 
+		 that is to be represented as the child class.
+	 -->
+	 
+	<bean id="parentClass"
+		class="com.spring.introduction.xml_config.inheritance.ParentClass">
+		<property name="group" value="Full Stack Java Engineers"></property>
+		<property name="id" value="32343kodsdjava"></property>
+	</bean>
+	
+	<bean id="childClass"
+		parent="parentClass"
+		class="com.spring.introduction.xml_config.inheritance.child.ChildClass">
+		<property name="id" value="dlsfa432432backend"></property>
+	</bean>
+</beans>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	 xsi:schemaLocation="http://www.springframework.org/schema/beans
+	 https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="springCollectionDemo"
+		class="com.spring.introduction.xml_config.collections.SpringCollectionDemo">
+		<property name="props">
+			<props>
+				<prop key="admin">james@intel.com</prop>
+				<prop key="tech">james@justAnswer.com</prop>
+				<prop key="engineer">james@pyramid.com</prop>
+			</props>
+		</property>
+		
+		<property name="list">
+			<list>
+				<value>instantiated this list and added value elements as strings</value>
+				<value>Spring implicitly initialized the list with a qualifying object</value>
+				<value>notice there is only a list import within the class</value>
+			</list>
+		</property>
+		
+		<property name="set">
+			<set>
+				<value>instantiated this set and added value elements as strings</value>
+				<value>Spring implicitly initialized the set with a qualifying object</value>
+				<value>notice there is only a set import within the class</value>
+			</set>
+		</property>
+		
+		<property name="map">
+			<map>
+				<entry key="Intel" value="Network Administration" />
+				<entry key="JustAnswer" value="Remote IT Technician" />
+				<entry key="Pyramid" value="Java Engineer" />
+			</map>
+		</property>
+	</bean>
+	 
+</beans>

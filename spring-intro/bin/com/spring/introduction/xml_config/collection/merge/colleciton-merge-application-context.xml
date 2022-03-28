@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	 https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- in order for this merge to work, I had to include the abstract attribute 
+		on the parent element. Also, I don't believe you will be able to get a bean 
+		from the container for the parent bean. -->
+	<bean id="parentCollection" abstract="true"
+		class="com.spring.introduction.xml_config.collection.merge.ParentCollection">
+		<property name="listMerge">
+			<list>
+				<value>Lorem ipsum dolor sit amet</value>
+				<value>consectetur adipiscing elit</value>
+				<value>sed do eiusmod tempor incididunt</value>
+			</list>
+		</property>
+	</bean>
+
+	<!-- take note of the parent and merge attributes on the bean and property 
+		elements -->
+	<bean id="childCollection" parent="parentCollection"
+		class="com.spring.introduction.xml_config.collection.merge.ChildCollection">
+		<property name="listMerge">
+			<list merge="true">
+				<value>elements inherit and override values from the parent
+					collection
+				</value>
+				<value>Notice the use of the merge=true attribute</value>
+				<value>When the child bean is resolved and instantiated by the
+					container, the resulting instance has an
+				</value>
+			</list>
+		</property>
+	</bean>
+
+</beans>

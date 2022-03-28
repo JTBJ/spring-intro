@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	 xsi:schemaLocation="http://www.springframework.org/schema/beans
+	 https://www.springframework.org/schema/beans/spring-beans.xsd">
+	 
+	 <!-- provide bean definitions -->
+	 <bean id="factoryMethodDemoConstructorArgParam" 
+	 	class="com.spring.introduction.xml_config.factory.method.FactoryMethodDemoConstructorArgParam">
+	 	<constructor-arg ref="exampleFactoryMethodDiViaConstArg" />
+	 </bean>
+	 
+	 <bean id="exampleFactoryMethodDiViaConstArg"
+	 	class="com.spring.introduction.xml_config.factory.method.ExampleFactoryMethodDiViaConstArg" >
+	 	<property name="message" value="initially for static factory method injection via constructor-args element" />	
+	 </bean>
+
+</beans>

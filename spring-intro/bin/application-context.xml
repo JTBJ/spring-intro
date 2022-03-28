@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	 xsi:schemaLocation="http://www.springframework.org/schema/beans
+	 https://www.springframework.org/schema/beans/spring-beans.xsd">
+	 
+	 <!-- import application context xml configuration files -->
+	 <import 
+	 	resource="external-application-context.xml" />
+	 	 
+	 <!-- provide bean definitions -->
+	 <bean id="student" 
+	 	class="com.spring.introduction.xml_config.beans.Student">
+	 	<property name="name" value="James" />
+	 	<property name="id" value="4839785403" />
+	 	<property name="className" value="Full Stack Java" />
+	 	<property name="clazz" ref="class" />
+	 </bean>
+
+</beans>

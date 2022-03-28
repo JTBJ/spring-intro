@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	 https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- inner bean demo -->
+	<bean id="innerBeanDemo"
+		class="com.spring.introduction.xml_config.inner_bean.InnerBeanDemo">
+		<property name="bean">
+			<bean id="collaborator"
+				class="com.spring.introduction.xml_config.inner_bean.Collaborator">
+				<property name="innerBeanRef" value="class collaborator diff package" />
+				<property name="message"
+					value="message was generated in the collaborator class using inner bean syntax" />
+			</bean>
+		</property>
+	</bean>
+</beans>

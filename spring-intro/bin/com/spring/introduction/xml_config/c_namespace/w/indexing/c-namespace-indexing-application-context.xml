@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- xmlns:c="http://www.springframework.org/schema/c" -->
+	
+	<!-- used for constructor arguments. The names are being referenced
+		 in the c:_namespace via their index position. NOTE: index
+		 positions are zero based.
+	 -->
+
+	<bean id="CNamespaceIndexingDemo"
+		class="com.spring.introduction.xml_config.c_namespace.w.indexing.CNamespaceIndexingDemo"
+		c:_0-ref="cName__Indexing_Arg1" c:_1-ref="cName__Indexing_Arg2" />
+
+	<bean id="cName__Indexing_Arg1"
+		class="com.spring.introduction.xml_config.c_namespace.w.indexing.ServesAsConstructorArg_1_ForCNamespaceIndexing">
+		<property name="cName_Indexing"
+			value="Arg 1 for c_namespace property in CNamespace indexing bean" />
+		<property name="cId_Indexing" value="3234243" />
+	</bean>
+
+	<bean id="cName__Indexing_Arg2"
+		class="com.spring.introduction.xml_config.c_namespace.w.indexing.ServesAsConstructorArg_2_ForCNamespaceIndexing">
+		<property name="cOccupation_Indexing" value="Java Engineer indexing" />
+	</bean>
+</beans>

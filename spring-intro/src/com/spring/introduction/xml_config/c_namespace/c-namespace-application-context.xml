@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- xmlns:c="http://www.springframework.org/schema/c" -->
+	<!-- used for constructor arguments. The names being referenced
+		 in the c:_namespace much match the variable names within
+		 this bean reference's class
+	 -->
+
+	<bean id="CNamespaceDemo"
+		class="com.spring.introduction.xml_config.c_namespace.CNamespaceDemo"
+		c:arg1-ref="cNameArg1" c:arg2-ref="cNameArg2" />
+			
+	<bean id="cNameArg1"
+		class="com.spring.introduction.xml_config.c_namespace.ServesAsConstructorArg_1_ForCNamespace">
+		<property name="cName"
+			value="Arg 1 for c_namespace property in CNamespace bean" />
+		<property name="cId" value="3234243" />
+	</bean>
+	
+	<bean id="cNameArg2"
+		class="com.spring.introduction.xml_config.c_namespace.ServesAsConstructorArg_2_ForCNamespace">
+		<property name="cOccupation" value="Java Engineer" />
+	</bean>
+</beans>

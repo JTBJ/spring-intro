@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	 xsi:schemaLocation="http://www.springframework.org/schema/beans
+	 https://www.springframework.org/schema/beans/spring-beans.xsd">
+	 	 
+	 <!-- provide bean definitions -->
+	 <bean id="factoryMethodDemo" factory-method="getTeacher" 
+	 	class="com.spring.introduction.xml_config.factory.method.FactoryMethodDemo">
+	 	<property name="name" value="Teacher" />
+	 	<property name="courseTaught" value="Java 103" />
+	 </bean>
+
+</beans>

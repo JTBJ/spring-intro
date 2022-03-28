@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	 xsi:schemaLocation="http://www.springframework.org/schema/beans
+	 https://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="collaborator" 
+		class="com.spring.introduction.xml_config.idref.Collaborator">
+		<property name="idRef" value="class collaborator" />
+		<property name="message" value="message was generated in the collaborator class" />	
+	</bean>
+	
+	<!-- runtime error don't know why yet -->
+	
+	<!-- <bean id="idrefDemo"
+		class="com.spring.introduction.xml_config.idref.IdrefDemo">
+		<property name="bean">
+			<idref bean="collaborator"/>
+		</property>	
+	</bean> -->
+	
+	<!-- the above code is the equivalent to below -->
+	<bean id="idrefDemo"
+		class="com.spring.introduction.xml_config.idref.IdrefDemo">
+		<property name="bean" ref="collaborator" />	
+	</bean>
+	
+</beans>
